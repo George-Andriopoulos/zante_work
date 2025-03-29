@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,25 +10,68 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: "#FF7000",
-          100: "#FFF1E6",
-          500: "#FF7000",
+        "deep-orange": {
+          DEFAULT: "#fc7102", // Use uppercase DEFAULT for the base class
+          // You could optionally add other shades here later if needed:
+          // '100': '#...',
+          // '600': '#...',
+        },
+        "vibrant-blue": {
+          DEFAULT: "#0071c2", // Use uppercase DEFAULT for the base class
+          // Optional other shades:
+          // '100': '#...',
+          // '700': '#...',
         },
         dark: {
-          100: "#000000",
-          200: "#0F1117",
-          300: "#151821",
-          400: "#212734",
-          500: "#101012",
+          "100": "#000000",
+          "200": "#0F1117",
+          "300": "#151821",
+          "400": "#212734",
+          "500": "#101012",
         },
         light: {
-          900: "#FFFFFF",
-          800: "#F4F6F8",
-          850: "#FDFDFD",
-          700: "#DCE3F1",
-          500: "#7B8EC8",
-          400: "#858EAD",
+          "400": "#858EAD",
+          "500": "#7B8EC8",
+          "700": "#DCE3F1",
+          "800": "#F4F6F8",
+          "850": "#FDFDFD",
+          "900": "#FFFFFF",
+        },
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        chart: {
+          "1": "hsl(var(--chart-1))",
+          "2": "hsl(var(--chart-2))",
+          "3": "hsl(var(--chart-3))",
+          "4": "hsl(var(--chart-4))",
+          "5": "hsl(var(--chart-5))",
         },
       },
       boxShadow: {
@@ -44,8 +88,13 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-roboto)", "sans-serif"],
       },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
 export default config;
