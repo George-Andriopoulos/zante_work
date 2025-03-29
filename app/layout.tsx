@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const roboto = localFont({
+  src: "./fonts/RobotoVF.ttf", // Path to your variable font file
+  variable: "--font-roboto", // CSS variable name to use
+  weight: "100 900", // Correct format: Define the available weight range
+  display: "swap", // Font display strategy
+  // Optional: Declare default styles if needed, but fontWeight uses the variable nature
+  // style: 'normal', // Usually not needed to specify here for variable fonts
 });
 
 export const metadata: Metadata = {
@@ -24,11 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${roboto.variable} antialiased`}>{children}</body>
     </html>
   );
 }

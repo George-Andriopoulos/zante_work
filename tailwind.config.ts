@@ -41,6 +41,9 @@ const config: Config = {
       screens: {
         xs: "420px",
       },
+      fontFamily: {
+        sans: ["var(--font-roboto)", "sans-serif"],
+      },
     },
   },
   plugins: [],
