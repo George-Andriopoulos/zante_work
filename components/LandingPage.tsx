@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion"; // Using framer-motion for animations
+import Link from "next/link";
 
 // --- Updated Navbar Component with Lines at the Bottom ---
 const Navbar = ({ className }: { className?: string }) => {
@@ -48,14 +49,16 @@ const Navbar = ({ className }: { className?: string }) => {
             height={60}
             className="rounded-full"
           />
-          <h1 className="text-lg font-bold tracking-tight text-black md:text-xl dark:text-white">
+          <h1 className="text-lg hidden md:block font-bold tracking-tight text-black md:text-xl dark:text-white">
             ZanteWork
           </h1>
         </div>
         {/* Login Button - Using vibrant-blue */}
-        <button className="w-auto transform rounded-lg bg-deep-orange px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-deep-orange/80 md:px-6 md:py-2 md:text-base dark:bg-white dark:text-black dark:hover:bg-gray-200">
+        <Link
+          href="/sign-in"
+          className="text-center w-auto transform rounded-lg bg-deep-orange px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-deep-orange/80 md:px-6 md:py-2 md:text-base dark:bg-white dark:text-black dark:hover:bg-gray-200">
           Σύνδεση
-        </button>
+        </Link>
       </div>
     </nav>
   );
@@ -122,13 +125,17 @@ export default function LandingPage() {
             transition={{ duration: 0.3, delay: 1.0, ease: "easeInOut" }}
             className="mt-2 flex flex-wrap items-center justify-center gap-4">
             {/* Button 1: Create Account */}
-            <button className="w-60 transform rounded-lg bg-vibrant-blue px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-vibrant-blue/80 dark:bg-white dark:text-black dark:hover:bg-gray-200">
+            <Link
+              href="/sign-up"
+              className="w-60 transform rounded-lg text-center bg-vibrant-blue px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-vibrant-blue/80 dark:bg-white dark:text-black dark:hover:bg-gray-200">
               Δημιουργία Λογαριασμού
-            </button>
+            </Link>
             {/* Button 2: How We Work */}
-            <button className="w-60 transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900">
+            <Link
+              href="#"
+              className="w-60 text-center transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900">
               Πως Λειτουργούμε
-            </button>
+            </Link>
           </motion.div>
         </div>
 
