@@ -69,10 +69,10 @@ const Navbar = ({ className }: { className?: string }) => {
 export default function LandingPage() {
   return (
     // Outer container fills screen
-    <div className="relative flex min-h-screen w-screen flex-col bg-white dark:bg-black">
+    <div className="relative flex min-h-screen  w-screen flex-col  dark:bg-black">
       <Navbar /> {/* Using the Navbar with bottom decorative lines */}
       {/* Decorative lines for the PAGE BODY (Unchanged) */}
-      <div className="absolute inset-y-0 left-0 h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
+      <div className="absolute inset-y-0 left-0  h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
         <div className="absolute top-0 h-40 w-px bg-gradient-to-b from-transparent via-blue-500 to-transparent" />
       </div>
       <div className="absolute inset-y-0 right-0 h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
@@ -132,7 +132,7 @@ export default function LandingPage() {
             </Link>
             {/* Button 2: How We Work */}
             <Link
-              href="#"
+              href="/about"
               className="w-60 text-center transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900">
               Πως Λειτουργούμε
             </Link>
